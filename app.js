@@ -17,6 +17,7 @@ const connectDB = require('./db/connect');
 app.use(helmet());
 app.use(morgan('tiny'));
 app.use(mongoSanitize());
+app.use(express.json());
 
 // API routes
 app.use('/api/users', userRoutes);
