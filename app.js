@@ -6,6 +6,7 @@ const app = express();
 const userRoutes = require('./routes/userRoutes.js');
 const eventRoutes = require('./routes/eventRoutes.js');
 const postRoutes = require('./routes/postRoutes.js');
+const groupRoutes = require('./routes/groupRoutes.js');
 
 // Middleware
 const morgan = require('morgan');
@@ -24,6 +25,7 @@ app.use(express.json());
 // API routes
 app.use('/api/users', userRoutes);
 app.use('/api/events', eventRoutes);
+app.use('/api/groups', groupRoutes);
 app.use('/api/posts', postRoutes);
 
 const port = process.env.PORT || 5000;
