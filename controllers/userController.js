@@ -1,10 +1,10 @@
 const User = require('../models/User.js');
 
 // Show all users
-const indexAction = (req, res) => {
+const indexAction = async (req, res) => {
     console.log('indexAction')
-    const data = User.
-    res.status(200).json({ success: true})
+    const data = await User.find({}).select('-password');
+    res.status(200).json({ success: true, data})
 }
 
 // create user

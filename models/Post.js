@@ -9,7 +9,7 @@ const postSchema = new mongoose.Schema({
     },
     type: {
       type: String, // Indicates whether it's an 'event' or 'group'
-      enum: ['event', 'group'],
+      enum: ['Event', 'Group'],
       required: true,
     },
     ref: { // Subdocument reference
