@@ -9,13 +9,18 @@ const postSchema = new mongoose.Schema({
     },
     type: {
       type: String, // Indicates whether it's an 'event' or 'group'
-      enum: ['Event', 'Group'],
+      enum: ['User', 'Event', 'Group'],
       required: true,
     },
-    ref: { // Subdocument reference
+    shared_resource_type: {
+      type: String,
+      enum: ['Event', 'Group'],
+      required: false,
+    },
+    shared_ref: { // Subdocument reference
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      refPath: 'type', // Reference path indicates 'event' or 'group'
+      required: false,
+      refPath: 'shared_resource_type', // Reference path indicates 'event' or 'group'
     },
 });
 
